@@ -4,7 +4,7 @@ TerminalBuffer = require '../lib/terminal-buffer'
 describe "Terminal Buffer", ->
   [buffer,events,output] = []
   beforeEach ->
-    atom.workspaceView = new WorkspaceView
+    atom.views.getView(atom.workspace = new WorkspaceView
     atom.packages.activatePackage 'terminal'
     buffer = new TerminalBuffer
     events = []

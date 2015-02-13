@@ -3,15 +3,15 @@ TerminalSession = require '../lib/terminal-session'
 
 describe "Terminal", ->
   beforeEach ->
-    atom.workspaceView = new WorkspaceView
+    atom.views.getView(atom.workspace = new WorkspaceView
     atom.packages.activatePackage 'terminal'
 
   describe "the terminal:open command", ->
     it "opens a terminal session for the given path in the current pane", ->
-      atom.workspaceView.trigger 'terminal:open'
+      atom.views.getView(atom.workspace.trigger 'terminal:open'
 
       waitsFor ->
-        atom.workspaceView.getActivePaneItem()
+        atom.views.getView(atom.workspace.getActivePaneItem()
 
       runs ->
-        expect(atom.workspaceView.getActivePaneItem() instanceof TerminalSession).toBe true
+        expect(atom.views.getView(atom.workspace.getActivePaneItem() instanceof TerminalSession).toBe true

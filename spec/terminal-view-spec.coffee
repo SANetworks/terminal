@@ -20,7 +20,7 @@ describe "Terminal view", ->
       updated
 
   beforeEach ->
-    atom.workspaceView = new WorkspaceView
+    atom.views.getView(atom.workspace = new WorkspaceView
     atom.packages.activatePackage 'terminal'
     session = {}
     Emitter.extend(session)
